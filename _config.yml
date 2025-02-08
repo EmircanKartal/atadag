@@ -1,0 +1,246 @@
+# =============================================================================
+# Basic Site Settings
+# =============================================================================
+
+# Typically, you only set url and baseurl if you have a custom domain or subfolder.
+url: "https://emircankartal.github.io"
+baseurl: "/atadag"
+
+lang: en
+
+# -----------------------------------------------------------------------------
+# SITE IDENTITY
+# -----------------------------------------------------------------------------
+title: "Ata Tan Dağıdır"
+description: >
+  Computer science, AI enthusiast, co-founder at @fidelio.
+  Industrial design & computer science double major @ Ozyegin University.
+
+# The tagline appears in the sidebar (just under name/description in Hydejack):
+tagline: |
+  Computer science, AI enthusiast  
+  co-founder at @Fidelio
+
+# Replace with the path to your actual image (square or circular is best):
+logo: /assets/img/profile.jpg
+
+author:
+  name: "Ata Tan Dağıdır"
+  email: "atadagidir@gmail.com"
+  # twitter: "your-handle"  # for SEO if you use X/Twitter
+
+# -----------------------------------------------------------------------------
+# SIDEBAR MENU
+# -----------------------------------------------------------------------------
+# - Make sure you have actual pages or posts for these links.
+menu:
+  - title: "Home"
+    url: "/"
+  - title: "Resume"
+    url: "/resume/"
+  - title: "Blog"
+    url: "/blog/"
+
+# -----------------------------------------------------------------------------
+# FOOTER LINKS
+# -----------------------------------------------------------------------------
+legal:
+  - title: "LICENSE"
+    url: "/LICENSE/"
+  - title: "NOTICE"
+    url: "/NOTICE/"
+  - title: "CHANGELOG"
+    url: "/CHANGELOG/"
+
+copyright: "© 2025. All rights reserved."
+
+# -----------------------------------------------------------------------------
+# PERMALINKS & PAGINATION
+# -----------------------------------------------------------------------------
+permalink: /:categories/:year-:month-:day-:title/
+paginate: 10
+paginate_path: /page/:num/
+
+# -----------------------------------------------------------------------------
+# THEME & STYLE
+# -----------------------------------------------------------------------------
+theme: jekyll-theme-hydejack
+
+# Sidebar background image and colors. Adjust if you have your own images/colors.
+accent_image: /assets/img/sidebar.jpg
+accent_color: "rgb(79,177,186)"
+theme_color: "rgb(25,55,71)"
+
+# Uncomment if you want Google Fonts
+# google_fonts: "Roboto+Slab:700|Noto+Sans:400,400i,700,700i"
+# font: "Noto Sans, Helvetica, Arial, sans-serif"
+# font_heading: "Roboto Slab, Helvetica, Arial, sans-serif"
+
+# -----------------------------------------------------------------------------
+# DEFAULTS
+# -----------------------------------------------------------------------------
+defaults:
+  - scope:
+      path: "assets/"
+    values:
+      sitemap: false
+
+  - scope:
+      path: "licenses/"
+    values:
+      layout: plain
+      sitemap: false
+
+  - scope:
+      type: "projects"
+    values:
+      seo:
+        type: "WebPage"
+  - scope:
+      type: "featured_categories"
+    values:
+      seo:
+        type: "WebPage"
+  - scope:
+      type: "featured_tags"
+    values:
+      seo:
+        type: "WebPage"
+
+# -----------------------------------------------------------------------------
+# KRAMDOWN (Markdown) SETTINGS
+# -----------------------------------------------------------------------------
+kramdown:
+  math_engine: katex
+  math_engine_opts: {}
+  footnote_backlink: "&#x21a9;&#xfe0e;"
+
+# -----------------------------------------------------------------------------
+# HYDEJACK SETTINGS
+# -----------------------------------------------------------------------------
+hydejack:
+  # Show about/newsletter/related posts/etc. at the bottom of posts
+  post_addons: [about, newsletter, related, random, comments]
+  project_addons: [about, newsletter, other, comments]
+  # Keep code blocks from spanning full width
+  no_break_layout: true
+  # Let Hydejack use Jekyll's related_posts if you run with --lsi
+  use_lsi: true
+  # Dark mode options, tweak as needed
+  dark_mode:
+    always: false
+    dynamic: true
+    icon: true
+
+# -----------------------------------------------------------------------------
+# COLLECTIONS
+# -----------------------------------------------------------------------------
+collections:
+  featured_categories:
+    output: true
+    permalink: /:name/
+  featured_tags:
+    output: true
+    permalink: /tag-:name/
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+# -----------------------------------------------------------------------------
+# INCLUDE / EXCLUDE
+# -----------------------------------------------------------------------------
+exclude:
+  - .jekyll-cache
+  - .sass-cache
+  - .ruby-lsp
+  - .wrangler
+  - "*.toml"
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - functions
+
+include:
+  - _routes.json
+  - .well-known
+  - LICENSE.md
+
+# -----------------------------------------------------------------------------
+# PLUGINS
+# -----------------------------------------------------------------------------
+plugins:
+  - jekyll-default-layout
+  - jekyll-feed
+  - jekyll-optional-front-matter
+  - jekyll-paginate
+  - jekyll-readme-index
+  - jekyll-redirect-from
+  - jekyll-relative-links
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-titles-from-headings
+  - jekyll-include-cache
+  - jekyll-last-modified-at
+
+# -----------------------------------------------------------------------------
+# SOCIAL / SEO
+# -----------------------------------------------------------------------------
+social:
+  # Shown in some Hydejack PRO features and SEO metadata
+  name: "Ata Tan Dağıdır"
+  links:
+    - "https://www.linkedin.com/in/ata-dagidir/"
+    - "https://github.com/atadagg"
+    - "https://x.com/atadawg"
+
+# -----------------------------------------------------------------------------
+# OTHER PLUGIN CONFIG
+# -----------------------------------------------------------------------------
+optional_front_matter:
+  remove_originals: true
+
+readme_index:
+  remove_originals: true
+  with_frontmatter: true
+
+relative_links:
+  collections: true
+
+titles_from_headings:
+  strip_title: true
+  collections: true
+
+compress_html:
+  comments: ["<!--", "-->"]
+  clippings: all
+  endings: all
+  ignore:
+    envs: [development]
+
+sass:
+  style: compressed
+  quiet_deps: true
+
+jekyll_compose:
+  default_front_matter:
+    drafts:
+      layout: post
+      description: >
+        A short description for SEO and social previews.
+      image:
+        path: /assets/img/sidebar-bg.jpg
+    posts:
+      layout: post
+      description: >
+        A short description for SEO and social previews.
+      image:
+        path: /assets/img/sidebar-bg.jpg
+    projects:
+      layout: project
+      description: >
+        A short description for SEO and social previews.
+      image:
+        path: /assets/img/sidebar.jpg
+      links:
+        - title: "Project Link"
+          url: "https://example.com"
