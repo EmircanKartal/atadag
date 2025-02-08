@@ -4,7 +4,7 @@
 
 # Typically, you only set url and baseurl if you have a custom domain or subfolder.
 url: "https://emircankartal.github.io"
-baseurl: "/atadag"
+baseurl: ""
 
 lang: en
 
